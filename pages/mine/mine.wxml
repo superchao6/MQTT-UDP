@@ -1,0 +1,59 @@
+<van-field
+    value="{{ Local_IP }}"
+    required
+    clearable
+    label="本机IP"
+    title-width="4em"
+    placeholder="本机IP地址"
+    bind:change="change_Local_IP"
+/>
+
+<van-field
+    value="{{ Other_IP }}"
+    required
+    clearable
+    label="从机IP"
+    title-width="4em"
+    placeholder="从机IP地址"
+    bind:change="change_other_IP"
+/>
+
+<van-field
+    value="{{ send_port }}"
+    label="发送端口"
+    placeholder="发送端口号"
+    title-width="4em"
+    required
+    clearable
+    bind:change="change_send_port"
+/>
+
+<van-field
+    value="{{ receive_port }}"
+    label="接收端口"
+    placeholder="接收端口号"
+    title-width="4em"
+    required
+    clearable
+    bind:change="change_receive_port"
+/>
+<view  class="get_IP_box">
+<van-button type="info" size="large" bind:click="get_Local_IP">获取本地IP</van-button>
+</view>
+
+<view  class="connecte_box">
+<van-button plain="{{connecte_flag}}" type="primary" size="large" bind:click="change_connecte_button">{{connecte_show}}</van-button>
+</view>
+
+<view class="output_big_box">
+    <textarea   class="output_box"
+                value="{{listen_massage}}"
+                bindblur="bindTextAreaBlur" 
+                disabled="true"
+                placeholder="接收区" 
+                maxlength='-1'
+    />
+    <input class="send_box" type="text" placeholder="Send massage!" bindinput="input_massage"/>
+    <van-button class="send_button_box" type="primary" size="large" bind:click="send_UDP_data">发送数据</van-button>
+
+</view>

@@ -1,0 +1,14 @@
+<!-- 2d 类型的 canvas -->
+<canvas id="myCanvas" type="2d" style="border: 0px solid; width: {{canvas_width}}px; height: {{canvas_height}}px;" />
+
+
+<slider class="slider_box" min="-150" max="150" show-value="true" value="{{slider_value}}" bindchanging="sliderchanging" bindchange="sliderchange" left-icon="cancel" right-icon="success_no_circle"/>
+
+<button bindtap="tap2_0">+2</button>
+<button bindtap="tap2_1">-2</button>
+<button bindtap="tap5_0">+5</button>
+<button bindtap="tap5_1">-5</button>
+<button bindtap="tap10_0">+10</button>
+<button bindtap="tap10_1">-10</button>
+<button bindtap="tap20_0">+20</button>
+<button bindtap="tap20_1">-20</button>

@@ -1,0 +1,5 @@
+/* pages/duoji/duoji.wxss */
+.slider_box{
+    padding-top: 60px;
+    padding-bottom: 40px;
+}

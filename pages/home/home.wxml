@@ -1,0 +1,46 @@
+<view class="choose_accuracy">
+    <view class="text_accuracy">精度选择：</view>
+    <radio-group bindchange="radioChange" class="radio_box">
+        <label  class="choose_radio"  wx:for="{{accuracy}}" wx:key="index">
+            <view>
+                <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </view>
+        </label>
+    </radio-group>
+</view>
+<view class="text_tips">点击以下参数名可以输入参数：</view>
+<view class="box">
+    <view class="one_pid">
+        <view class="one_box" wx:for="{{PID1}}" wx:key="index" >
+            <view class="text" bindtap="showDialogBtn" data-name="{{item.name}}" data-pid="1" data-id="{{item.id}}">{{item.name}}:</view>
+            <image class="add_icon" src="/images/Add.png" bindtap="add_pid1" data-pid1="{{index}}"></image>
+            <view class="data_value">{{item.value}}</view>
+            <image class="minus_icon" src="/images/Minus.png" bindtap="minus_pid1" data-pid1="{{index}}"></image>
+        </view>
+    </view>
+    <view class="one_pid">
+        <view class="one_box" wx:for="{{PID2}}" wx:key="index" >
+            <view class="text"  bindtap="showDialogBtn" data-name="{{item.name}}" data-pid="2"
+            data-id="{{item.id}}">{{item.name}}:</view>
+            <image class="add_icon" src="/images/Add.png" bindtap="add_pid2" data-pid2="{{index}}"></image>
+            <view class="data_value">{{item.value}}</view>
+            <!-- <input class="input_value" bindinput="input_data" type="digit" placeholder="{{item.name}}" style='text-align:center' model:value="{{item.value}}"/> -->
+            <image class="minus_icon" src="/images/Minus.png" bindtap="minus_pid2" data-pid2="{{index}}"></image>
+        </view>
+    </view>
+</view>
+
+<!--弹窗-->
+<view class="modal-hide" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">输入参数{{showName}}</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="digit" maxlength="8" bindinput="input_value" class="input" placeholder="请输入参数{{showName}}"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm">确定</view>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+{
+  "pages":[
+    "pages/duoji/duoji",
+    "pages/mine/mine",
+    "pages/device/device",
+    "pages/home/home"
+  ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/mine/mine",
+      "text": "首页",
+      "iconPath": "./images/wode.png",
+      "selectedIconPath": "./images/wodedamaijihuo.png"
+    },{
+      "pagePath": "pages/duoji/duoji",
+      "text": "我的",
+      "iconPath": "./images/wode.png",
+      "selectedIconPath": "./images/wodedamaijihuo.png"
+    }
+  ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
